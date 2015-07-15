@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+<title>Alamo Records - San Francisco</title>
+
+<!--STYLE SHEETS AND FONTS-->
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" media="screen, projection" href="jcart/css/jcart.css" />
+<link rel="stylesheet" href="thickbox.css" type="text/css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+<!--JS INCLUDES-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>-->
+<!--<script type="text/javascript" src="jcart/js/jquery-1.4.4.min.js"></script>-->
+<script type="text/javascript" src="jcart/js/jcart.js"></script>
+<script src="jquery.roundabout.js"></script>
+<script type="text/javascript" src="thickbox.js"></script>
+
+<!--FUNCTIONS-->
+<script>
+$(document).ready(function() {
+  $('#carousel').roundabout({childSelector:"img"});
+});
+      
+function descrip() {
+  var slideNum = $('#carousel').roundabout("getChildInFocus");
+  $('#carousel-descriptions').children('li').removeClass('current');
+  $($('#carousel-descriptions').children('li').get(slideNum)).addClass('current');
+}
+
+function artswitch(artpage) {
+  $('#artistlist').children('li').removeClass('current');
+  $($('#artistlist').children('li').get(artpage)).addClass('current');
+}
+
+function updatecount(){
+   $.post(
+        'relayitemcount.php','',
+        function(data){
+        $("#itemCount").html(cartData); //<div id="subtotal></div>
+    }); 
+}
+</script>
+
+<!--PHP INCLUDES-->
+<?php
+error_reporting(0);
+include_once('jcart/jcart.php');
+session_start();
+?>
+</head>
+<body>
+
+
+<div class="container">
+  <div class="header">
+    <a href="./index.php"><img style="margin-left:10px; margin-top:20px;" src="images/logo.png" width="582" height="222" /></a>
+  
+    <div class="cart">
+      You have <span id="itemCount"><?php echo $jcart->itemCount?></span> Items in your cart<br>
+      <em><a href="checkout.php">Checkout</a></em>
+    </div>
+    
+    <div class="contact">
+      513 Lyon St<br />
+      San Francisco, CA 94117<br />
+      <a href="mailto:mikeyobviously@gmail.com">mikeyobviously@gmail.com</a><br />
+      614-352-8787
+    </div>
+  </div>

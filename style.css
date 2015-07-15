@@ -1,0 +1,326 @@
+body {
+background-image: url(images/background.jpg);
+margin: 0;
+padding: 0;
+color: #FFF5EE;
+font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+line-height: 18px;
+font-size: 12px;
+}
+
+p {
+margin-bottom: 18px;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+margin-top: 0;
+padding-right: 0px;
+padding-left: 0px;
+}
+
+h1, h2 {
+font-family: "Oswald", "Lucida Grande", "Lucida Sans Unicode", sans-serif;	
+margin-bottom: 18px;
+}
+
+h2, h3{
+line-height: 18px; 
+}
+
+h1 { 
+font-size: 24px; 
+line-height: 36px;
+}
+
+h2 { 
+font-size: 18px; 
+}
+
+h3 { 
+font-size: 12px; 
+}
+
+ul, ol, dl { 
+padding: 0px;
+margin: 0px 0px 18px 0px;
+}
+
+a img { 
+border: none;
+}
+
+a:link {
+color:#CCC;
+text-decoration: none; 
+}
+a:visited {
+color: #CCC;
+text-decoration: none;
+}
+a:hover, a:active, a:focus { 
+text-decoration: blink;
+}
+
+.container {
+width: 80%;
+max-width: 920px;
+min-width: 920px;
+min-height: 1000px;
+margin: 0 auto; 
+margin-top: 40px;
+margin-bottom: 40px;
+border:70px solid #d0a680;
+-moz-border-radius: 10px;
+border-radius: 10px;
+
+-moz-border-image:url("images/containerborder.png") 70 stretch;
+-webkit-border-image:url("images/containerborder.png") 70 stretch;
+border-image:url("images/containerborder.png") 70 stretch;
+background-image: url(images/tile2.png);
+
+position: relative;
+behavior: url(/pie/PIE.htc);
+
+}
+
+.header { 
+position:relative;
+background-image: url(images/vinylbackground.png);
+height: 228px;
+margin-bottom: 20px;
+}
+
+.contact {
+position: absolute;
+right:0;
+bottom:0;
+margin-right:20px;
+text-align:right;
+}
+
+.content {
+width: 58.77%;
+margin-left: 20px;
+margin-bottom: 20px;
+height: 320px;
+}
+
+.content2 {
+width: 58.77%;
+margin-left: 20px;
+margin-bottom: 20px;
+}
+
+.contentMain {
+margin-left: 20px;
+margin-bottom: 20px;	
+height: 320px;
+}
+
+.content3 {
+margin-left: 20px;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+#retrieved-data {
+margin: 0px 20px 20px 20px;
+}
+
+.sidebar {
+float: right;
+width: 35.22%;
+margin-right: 20px;
+
+height: 72px;
+}
+
+.sidebar2 {
+float: right;
+width: 35.22%;
+height: 320px;
+margin-right: 20px;
+margin-bottom: 20px;
+}
+
+.sidebar2 button {
+	padding: 1px 7px;
+	background-color: #aaa;
+	border-color: #999;
+	margin: 0px 6px
+}
+
+.sidebar2 button:hover {
+	background-color:#ddd
+}
+
+.homepageAdd {
+	position: relative;
+	left: 78px;
+	bottom: 15px;
+}
+
+.footer {
+padding: 10px 0;
+position:absolute;
+bottom:0;
+font-size: 9px;
+}
+
+/* STYLES FOR PHP TABLE */
+table.altrowstable {
+border-color: #CCC;
+border-collapse: collapse;
+margin-top: 10px;
+width: 100%;
+}
+
+table.altrowstable th {
+padding: 5px;
+border-width: 1px;
+border-style: solid;
+border-color: #CCC;
+background: url(images/th.png) 0 0 repeat;
+}
+
+table.altrowstable td {
+padding: 5px;
+border-width: 1px;
+border-style: solid;
+border-color: #D6D6D6;
+}
+
+
+fieldset {
+display: inline;	
+}
+
+.button{
+-webkit-box-shadow: rgba(0, 0, 0, 0.0976562) 0px 1px 0px 0px;
+background-color: #EEE;
+color: #666;
+font-size: 10px;
+}
+
+.oddrow {
+background: url(images/odd.png) 0 0 repeat;
+}
+.evenrow {
+background: url(images/even.png) 0 0 repeat;
+}
+
+.browsebutton {
+	position: relative;
+	left: 220px;
+	top: 55px;
+}
+
+#checkoutTable {
+
+	
+}
+
+fieldset {
+border: none;
+margin: 0;
+padding: 0;
+}
+
+.tally {
+font-size: 10px;
+float: right;
+vertical-align: bottom;
+text-align:right;
+padding-right: 10px;
+padding-top: 5px;
+}
+
+.feature td {
+vertical-align: top;
+font-size: 12px;
+}
+
+#retrieved-data img{
+	position:relative;
+	top:20px;
+	left:350px;
+}
+
+/* SHOPPING CART */
+
+
+.cart {
+float: right;
+margin: 20px 20px 0px 0px;
+vertical-align: top;
+font-size: 10px;
+text-align:right;
+}
+
+/* INVENTORY PAGE NAV */
+.page-nav {
+margin: 10px 0px 8px 0px;
+padding: 4px;
+}
+
+.page-nav a {
+border: thin solid #CCC;
+padding: 4px;
+background: url(images/odd.png) repeat;
+color: #CCC;
+text-decoration: none;
+}
+
+.page-nav a:hover {
+border: thin solid #FFF;
+background: url(images/even.png) repeat;
+color: #FFF;
+}
+
+.page_link {
+padding: 4px;
+}
+
+/* ROUNDABOUT */
+.roundabout-holder {
+list-style: none;
+padding: 0;
+margin-left: 80px;
+margin-top: 10px;
+height: 270px;
+width: 70%;
+}
+
+.roundabout-moveable-item {
+height: 250px;
+width: 250px;
+cursor: pointer;
+background-color: #333;
+font-size:10px;
+}
+
+.roundabout-in-focus {
+cursor: auto;
+}
+
+#carousel-descriptions{
+padding-left: 50px;
+
+}   
+
+#carousel-descriptions li {
+display:none;
+}
+
+#carousel-descriptions li.current {
+display:block;
+}
+
+#artistlist li {
+display:none;
+list-style: none;
+}
+
+#artistlist li.current {
+display:block;
+}

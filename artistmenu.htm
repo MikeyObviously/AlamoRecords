@@ -1,0 +1,59 @@
+  <h2>Artists in Stock</h2>
+  <p><button onClick="artswitch(0)">A-E</button> | <button onClick="artswitch(1)">F-K</button> | <button onClick="artswitch(2)">L-P</button> | <button onClick="artswitch(3)">Q-S</button> | <button onClick="artswitch(4)">T-Z</button>
+  <ul id="artistlist">
+  	<li class="current">| 
+
+<?php
+
+//CONNECT TO DB FOR ARTIST TOOLBAR
+$con = mysql_connect("localhost","root","root");
+if (!$con){
+  die('Could not connect: ' . mysql_error());
+}
+mysql_select_db("alamo", $con);
+
+//HELPER VAR
+$separate = 5;
+
+//QUERY
+$arttool = mysql_query("SELECT DISTINCT * FROM records GROUP BY artist ORDER BY TRIM( LEADING 'a ' FROM TRIM( LEADING 'an ' FROM TRIM( LEADING 'the ' FROM LOWER( artist ) ) ) )");
+	  
+while($row = mysql_fetch_array($arttool)){
+  $current=$row['Artist'];	
+  $article=substr($current, 0, 4);
+  $currentletter=strtolower($current[0]);
+
+  if($article=="The ") {
+  $currentletter=strtolower($current[4]);	
+  }
+  
+  $artcount = mysql_num_rows(mysql_query("SELECT * FROM records WHERE Artist = '$current'"));
+  $spaceless = str_replace(" ", "%20", $row['Artist']);	
+  
+//DIVIDE ARTIST LIST BY LETTER
+  if($currentletter == 'f' && $separate == 5) {
+	echo "</li><li>| ";
+	$separate--;
+  }
+
+  if($currentletter == 'l' && $separate == 4) {
+	echo "</li><li>| ";
+	$separate--;
+  }
+  
+  if($currentletter == 'q' && $separate == 3) {
+	echo "</li><li>| ";
+	$separate--;
+  }
+  
+  if($currentletter == 't' && $separate == 2) {
+	echo "</li><li>| ";
+	$separate--;
+  }
+  
+  echo "<a href=inventory.php?dec=0&format=0&art='" . $spaceless . "'>" .  $row['Artist'] . "</a> ($artcount) | ";	
+}
+?>
+    	
+    </li>
+  </ul>
